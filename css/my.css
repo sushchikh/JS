@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300&subset=cyrillic');
+
+body {
+	background-color: #fafafa;
+	font-color: #333;
+	font-family: roboto;
+	font-weight: 300;
+	padding: 20px 20px 20px 40px; 
+}
+
+a {
+	color: #333;
+	font-size: 20px;
+	text-decoration: none;
+	transition: all .3s ease;
+}
+a:visited {
+	color: #333;
+}
+a:active {
+	color: #333;
+}
+a:hover{
+	color: #777;
+	border-bottom: 1px solid #999;
+}
+p{
+	position: relative;
+}
+p>img{
+	margin-right: 15px;
+	position: relative;
+	top: 6px;
+	transition: transform .3s ease;
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+p:hover img{
+	transform: scale(1.2);
+	-webkit-filter: grayscale(0%);
+	filter: grayscale(0%);
+}
