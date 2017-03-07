@@ -6,7 +6,7 @@ $(document).ready(function(){
 		link.each(function(index, elem){   // метод беребора элементо each, передает функции в нем параметры index и elem
 			setTimeout(function(){
 				$(elem).addClass("show"); // $(elem) - последовательно все элементы of each
-			}, index*300);		
+			}, index*300+100);		
 		});
 	};
 
@@ -58,11 +58,13 @@ $(document).ready(function(){
 	
 	
 	
-	$( 'li' ).click(function( event ) {
-		console.log( 'clicked', $( this ).text() );
+	// $( 'li' ).click(function( event ) {
+	// 	console.log( 'clicked', $( this ).text() );
+	// });
+	
+	$('button').click(function(event) {
+		$('span').hide();
 	});
-	
-	
 	
 	
 	
