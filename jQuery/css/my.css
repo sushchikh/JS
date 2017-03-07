@@ -12,6 +12,9 @@ h2{
 .features_link{
 	font-weight: 300;
 	margin-top: 10px;
+	opacity: 0;
+	transform: translateX(100px);
+	transition: all .3s ease;
 }
 .features_link a{
 	color: #333;
@@ -20,4 +23,19 @@ h2{
 
 .features_link a:visited{
 	color: #333;
+}
+
+
+hr{
+	margin-top: 20px;
+	
+}
+
+.show{
+	transform: translateX(0);
+	opacity: 1;
+}
+
+.list_for_test{
+	margin-top: 50px;
 }
