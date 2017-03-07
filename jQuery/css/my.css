@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400');
+
+body{
+	font-family: roboto;
+	padding-left: 30px;
+	padding-top: 20px
+}
+
+h2{
+	font-weight: 400;
+}
+.features_link{
+	font-weight: 300;
+	margin-top: 10px;
+}
+.features_link a{
+	color: #333;
+	text-decoration: none;
+}
+
+.features_link a:visited{
+	color: #333;
+}
