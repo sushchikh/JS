@@ -55,3 +55,48 @@ document.getElementById('test_element').style.padding = '3px 15px';
 
 // прочитать класс элемента
 console.log(document.body.className ); // 
+
+
+
+//  ######  ########          #######  ########        ##
+// ##    ## ##     ##        ##     ## ##     ##       ##
+// ##       ##     ##        ##     ## ##     ##       ##
+// ##       ########         ##     ## ########        ##
+// ##       ##   ##          ##     ## ##     ## ##    ##
+// ##    ## ##    ##  ###    ##     ## ##     ## ##    ##
+//  ######  ##     ## ###     #######  ########   ######
+
+// создание элемента с тегом div (но не в HTML)
+var div = document.createElement('div');
+// задаем класс объекту div
+div.calassName = 'alert alert-success';
+// заполняем его
+div.innerHTML = 'Ура, мы научились создавать элементы!';
+// сразу зададаим ему какой-то стиль
+div.style.backgroundColor = "white";
+div.style.display = "inline-block";
+div.style.padding = "10px 30px";
+div.style.fontFamily = "roboto";
+
+// пока объект просто создан, но пока еще никуда не вставлен
+
+// ловим элемент, в который будем вставлять нащ div
+var parentElement = document.body;
+// вставляет методом appendChild наш элемент
+parentElement.appendChild(div);
+// теперь вставим в начало пойманого элемента
+parentElement.insertBefore(div, parentElement.firstElementChild);
+
+//клонируем наш созданный объект
+var div2 = div.cloneNode(true);
+// зададим ему другое содержание
+div2.innerHTML = 'здесь другое сообщение';
+// вставим его в HTML
+parentElement.appendChild(div2, parentElement.lastElementChild);
+
+// удаление объекта через секудну
+setTimeout(function () {
+	div.parentNode.removeChild(div);
+}, 1000);// 1000 = 1 сек
+
+
