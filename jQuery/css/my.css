@@ -2,8 +2,18 @@
 
 body{
 	font-family: roboto;
-	padding-left: 30px;
+
 	padding-top: 20px
+	overflow: hidden
+	padding: 0px;
+	margin: 0px
+
+}
+
+.main_container{
+	/*width: 100%;*/
+	overflow: hidden;
+	padding-left: 30px;
 }
 
 h2{
@@ -38,4 +48,9 @@ hr{
 
 .list_for_test{
 	margin-top: 50px;
+}
+
+.img{
+	position: relative;
+	left: -800px;
 }
