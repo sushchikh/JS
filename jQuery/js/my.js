@@ -96,7 +96,7 @@ $(function(){
 	
 // атрибуты элементов и CSS//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	var attr = $("#my").css('color'); // получаем значение цвета шрифта
+	var attr = $("#someClass").css('color'); // получаем значение цвета шрифта
 	$('attr').css('color', 'red'); // устанавливаем значение цвета шрифта
 	// устанавливаем сразу несколько значений
 	$('attr').css({
@@ -169,9 +169,31 @@ $(function(){
 	$('.someClass').fadeToggle(500); // перключатель между fadeIn и fadeOut
 	$('.someClass').fadeTo(500, 0.3); // меняет opacity до указанного значения
 
-	
+	function animateImg(){
+		$('.img_container img').animate({
+			'width': '-=10px',
+			'height': '-=10px'},
+			600, function() {
+			/* stuff to do after animation is complete */
+		});
+	};
+
+	$('#box')
+		.animate({left:'+=100'})
+		.animate({top:'+=100'}) // этот вызов добавится в очередь, и будет выполнен после первого
+	$('box')
+		.animate({left:'+=100'})
+		.animate({left:'+=100'}, {queue: false}) // эта анимация выполниться вместе с предыдущей (очередь игнорирована)
 
 
+
+// МАНИПУЛЯЦИЯ С DOM ########################################################################
+
+var $myDiv = $('<div id="my" class="some_class"></div>'); // создаем элемент с содержанием (работает долго)
+var $myDiv = $('<div>', {'id': 'my', 'class': 'some_class'}); // аналог, но работает побыстрее 
+var $myDiv = $('<div>').attr({'id':'my', 'class':'some_class'}); // аналог, работает еще быстрее
+
+//74 страница
 
 
 // TEST AREA############################################################
@@ -185,8 +207,8 @@ $(function(){
 	// });
 	
 	$('button').click(function(event) {
-		var redElement = $('#tools').css('color');
-		$('redElement').css('color', 'red');
+		$('#tools').css('color', 'red');
+		animateImg();
 		//$('span').css('color', 'blue');
 		//console.log($('.features_link').hasClass('show'));
 		$('li').slideToggle(600, function(){  // добавим к этому колл-бэк функцию, которая выполниться, когда элемент скроется
@@ -194,10 +216,10 @@ $(function(){
 		});
 	});
 	
+	console.log($('.tools'));
 	
 	
-	
-});
+}); /*jQuery func END*/
 
 
 
