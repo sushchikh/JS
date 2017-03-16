@@ -1,4 +1,4 @@
-//дочерние элементы - непосредственые вложения в родительский элемент
+﻿//дочерние элементы - непосредственые вложения в родительский элемент
 //потомки - элементы которые лежат внутри данного с их детьми и их детьми и т.к.
 
 
@@ -66,26 +66,26 @@ console.log(document.body.className ); //
 // ##    ## ##    ##  ###    ##     ## ##     ## ##    ##
 //  ######  ##     ## ###     #######  ########   ######
 
-// создание элемента с тегом div (но не в HTML)
-var div = document.createElement('div');
-// задаем класс объекту div
-div.calassName = 'alert alert-success';
-// заполняем его
-div.innerHTML = 'Ура, мы научились создавать элементы!';
-// сразу зададаим ему какой-то стиль
-div.style.backgroundColor = "white";
+
+var div = document.createElement('div'); // создание элемента с тегом div (но не в HTML)
+
+div.calassName = 'alert alert-success'; // задаем класс объекту div
+
+div.innerHTML = 'Ура, мы научились создавать элементы!'; // заполняем его
+
+div.style.backgroundColor = "white"; // сразу зададаим ему какой-то стиль
 div.style.display = "inline-block";
 div.style.padding = "10px 30px";
 div.style.fontFamily = "roboto";
 
 // пока объект просто создан, но пока еще никуда не вставлен
 
-// ловим элемент, в который будем вставлять нащ div
-var parentElement = document.body;
-// вставляет методом appendChild наш элемент
-parentElement.appendChild(div);
-// теперь вставим в начало пойманого элемента
-parentElement.insertBefore(div, parentElement.firstElementChild);
+
+var parentElement = document.body; // ловим элемент, в который будем вставлять нащ div
+
+parentElement.appendChild(div); // вставляет методом appendChild наш элемент
+
+parentElement.insertBefore(div, parentElement.firstElementChild); // теперь вставим в начало пойманого элемента
 
 //клонируем наш созданный объект
 var div2 = div.cloneNode(true);
@@ -94,9 +94,9 @@ div2.innerHTML = 'здесь другое сообщение';
 // вставим его в HTML
 parentElement.appendChild(div2, parentElement.lastElementChild);
 
-// удаление объекта через секудну
+// удаление объекта через 3 сек
 setTimeout(function () {
 	div.parentNode.removeChild(div);
-}, 1000);// 1000 = 1 сек
+}, 3000);// 1000 = 1 сек
 
 
