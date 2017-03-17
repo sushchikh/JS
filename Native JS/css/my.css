@@ -40,3 +40,17 @@ p:hover img{
 	-webkit-filter: grayscale(0%);
 	filter: grayscale(0%);
 }
+
+.myAllertMessage{
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background-color: pink;
+	padding: 5px 20px;
+	border-radius: 10px;
+}
+
+.show{
+	display: inline-block;
+}
