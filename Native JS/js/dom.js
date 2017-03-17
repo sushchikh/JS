@@ -100,3 +100,33 @@ setTimeout(function () {
 }, 3000);// 1000 = 1 сек
 
 
+
+
+var myMessage = document.querySelector('.myAllertMessage');
+var testButton = document.querySelector('.testButton');
+
+testButton.addEventListener("click", myAllert);
+
+
+function myAllert(){	
+	myMessage.classList.add('show');
+	setTimeout( removeMessage ,3000);
+};
+
+function removeMessage(){
+	myMessage.classList.remove('show');
+};	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
