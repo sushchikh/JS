@@ -7,25 +7,28 @@ console.log(navigator.userAgent);
 console.log(navigator.platform);
 console.log(location);
 console.log(location.href);
-//location.assign('http:\\www.ya.ru');
+//location.assign('http:\\www.ya.ru'); => гонит страничку на ссылку
 
 //элементы DOMa и доступ к ним (точки входа)
 
-//HTML
-document.documentElement.style.fontFamily = "arial";//изменит стиль HTMLa
 
-//body
+document.documentElement.style.fontFamily = "arial";  //HTML и его стиль на ариал
+
 document.body.style.backgroundColor = "#eee";// изменит стиль doby
 //естественно, если скрипт расположен в "хеаде", document.body будет равен null
 console.log('');
+
 //выведет все дочерние элементы в body
-console.log('все дочерние элеенты body');
+console.log('все дочерние элеенты body: ');
 for (var i = 0; i < document.body.childNodes.length; i++){
 	console.log( document.body.childNodes[i] );
 };
 console.log('');
+
 //lastChild и firstChild - послдений и первый дочерений элементы
+
 //previousSibling и nextSibling - соседи предыдущий и следующий, соответственно
+
 //эти ссылки на элементы будут перебирать и текстовые элементы типа пробелов и переносов строк
 //поэтому надо юзать lastElementChild и firstElementChild и previousElementSibling и nextElementSibling
 //и соответственно parentElement
@@ -35,12 +38,13 @@ for (var i = 0; i < document.body.children.length; i++){
 };
 
 //доступ к body, дальше можно плясать внутрь и в бок
-//console.log(document.documentElement.firstElementChild.nextElementSibling); -> <body>
+//console.log(document.documentElement.firstElementChild.nextElementSibling); --> <body>
 
 
 //document.getElementById('уникальный идентификатор'); ищет по id 
 document.getElementById('test_element').style.backgroundColor = 'lightpink';
 document.getElementById('test_element').style.padding = '3px 15px';
+document.getElementById('test_element').style.borderRadius = '2px';
 
 //document.getElementsByTagName('div'); ищет все дивы внутри документа
 //можно получиль всех потомков использовав * (звездочку) в скобках, например
@@ -56,16 +60,14 @@ document.getElementById('test_element').style.padding = '3px 15px';
 // прочитать класс элемента
 console.log(document.body.className ); // 
 
+var someElement = document.getElementsByTagName('*')[3];
+console.log(someElement.innerHTML);
 
 
-//  ######  ########          #######  ########        ##
-// ##    ## ##     ##        ##     ## ##     ##       ##
-// ##       ##     ##        ##     ## ##     ##       ##
-// ##       ########         ##     ## ########        ##
-// ##       ##   ##          ##     ## ##     ## ##    ##
-// ##    ## ##    ##  ###    ##     ## ##     ## ##    ##
-//  ######  ##     ## ###     #######  ########   ######
 
+/*
+СОЗДАНИЕ ЭЛЕМЕНТОВ
+*/
 
 var div = document.createElement('div'); // создание элемента с тегом div (но не в HTML)
 
@@ -87,12 +89,11 @@ parentElement.appendChild(div); // вставляет методом appendChild
 
 parentElement.insertBefore(div, parentElement.firstElementChild); // теперь вставим в начало пойманого элемента
 
-//клонируем наш созданный объект
-var div2 = div.cloneNode(true);
-// зададим ему другое содержание
-div2.innerHTML = 'здесь другое сообщение';
-// вставим его в HTML
-parentElement.appendChild(div2, parentElement.lastElementChild);
+var div2 = div.cloneNode(true);//клонируем наш созданный объект
+
+div2.innerHTML = 'здесь другое сообщение';// зададим ему другое содержание
+
+parentElement.appendChild(div2, parentElement.lastElementChild);// вставим его в HTML
 
 // удаление объекта через 3 сек
 setTimeout(function () {
@@ -101,6 +102,9 @@ setTimeout(function () {
 
 
 
+
+
+// test area ############################################################################
 
 var myMessage = document.querySelector('.myAllertMessage');
 var testButton = document.querySelector('.testButton');
@@ -116,6 +120,9 @@ function myAllert(){
 function removeMessage(){
 	myMessage.classList.remove('show');
 };	
+
+
+
 
 
 
