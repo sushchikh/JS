@@ -31,7 +31,7 @@ for(var i = -5; i < 11; i++){
 };
 
 fourthArray = fourthArray.some(function(elem){ 
-	return elem > 0; // вернет true, если хотыб один из элементов больше 0
+	return elem > 0; // вернет true, если хотябы один из элементов больше 0
 });
 console.log(fourthArray);
 
@@ -39,3 +39,4 @@ console.log(fourthArray);
 fourthArray = fourthArray.every(function(elem){
 	return elem > 0; // вернет true, если все элементы больше ноля (=> false)
 });
+
